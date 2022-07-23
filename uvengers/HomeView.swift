@@ -12,44 +12,74 @@ struct HomeView: View {
     @State var uv = UVInfoView()
     @State var user = UserStatusView()
     
+    let backGreen = Color(0x8EB3A2)
+    
     var body: some View {
-        
-        VStack {
-            HStack {
-                
-            }
-        
-            TabView {
-                // UV info
-                uv
-                
-                // User status
-                user
-            }
-            .padding(30)
-            .tabViewStyle(.page)
+        ZStack {
+            backGreen.ignoresSafeArea()
             
-            // Apply button
-            Button("Apply", action: {
+            VStack {
+                HStack {
+                    // Menu button
+                    Text("Burger").padding(20)
+                    
+                    Spacer()
+                    
+                    // Title
+                    Text("Uvengers")
+                    
+                    Spacer()
+                    
+                    // Profile
+                    Text("Profile").padding(20)
+                }
                 
-            })
-            .background(Color.red)
-            .cornerRadius(30)
+                // User location
+                Text("Redlands, CA")
             
-            Spacer()
-            
-            HStack {
+                TabView {
+                    // User status
+                    user
+                    
+                    // UV info
+                    uv
+                }
+                .padding(30)
+                .tabViewStyle(.page)
+                
+                // Apply button
+                Button("Apply", action: {
+                    
+                })
+                .background(Color.red)
+                .cornerRadius(30)
+                
                 Spacer()
-                Text("1")
-                Spacer()
-                Text ("2")
-                Spacer()
-                Text("3")
-                Spacer()
+                
+                HStack {
+                    Spacer()
+                    Text("1")
+                    Spacer()
+                    Text ("2")
+                    Spacer()
+                    Text("3")
+                    Spacer()
+                }
             }
         }
-        
     }
+}
+
+extension Color {
+  init(_ hex: UInt, alpha: Double = 1) {
+    self.init(
+      .sRGB,
+      red: Double((hex >> 16) & 0xFF) / 255,
+      green: Double((hex >> 8) & 0xFF) / 255,
+      blue: Double(hex & 0xFF) / 255,
+      opacity: alpha
+    )
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {

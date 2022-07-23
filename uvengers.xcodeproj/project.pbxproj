@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		898900D6288C46E00060A237 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898900D5288C46E00060A237 /* UserViewModel.swift */; };
 		89F1B512288B7DD900AC4587 /* uvengersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F1B511288B7DD900AC4587 /* uvengersApp.swift */; };
 		89F1B514288B7DD900AC4587 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F1B513288B7DD900AC4587 /* HomeView.swift */; };
 		89F1B516288B7DDC00AC4587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89F1B515288B7DDC00AC4587 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		898900D5288C46E00060A237 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		89F1B50E288B7DD900AC4587 /* uvengers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uvengers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F1B511288B7DD900AC4587 /* uvengersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uvengersApp.swift; sourceTree = "<group>"; };
 		89F1B513288B7DD900AC4587 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				89F1B513288B7DD900AC4587 /* HomeView.swift */,
 				89F1B51F288B7F3B00AC4587 /* UVInfoView.swift */,
 				89F1B521288B7F5400AC4587 /* UserStatusView.swift */,
+				898900D5288C46E00060A237 /* UserViewModel.swift */,
 				89F1B515288B7DDC00AC4587 /* Assets.xcassets */,
 				89F1B517288B7DDC00AC4587 /* Preview Content */,
 			);
@@ -146,6 +149,7 @@
 				89F1B514288B7DD900AC4587 /* HomeView.swift in Sources */,
 				89F1B522288B7F5400AC4587 /* UserStatusView.swift in Sources */,
 				89F1B512288B7DD900AC4587 /* uvengersApp.swift in Sources */,
+				898900D6288C46E00060A237 /* UserViewModel.swift in Sources */,
 				89F1B520288B7F3B00AC4587 /* UVInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
