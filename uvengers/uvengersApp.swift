@@ -14,7 +14,7 @@ struct uvengersApp: App {
     var body: some Scene {
         
         WindowGroup {
-            HomeView()
+            MainView()
         }
     }
 }

@@ -67,9 +67,6 @@ extension SwiftUIMapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: AGSMapView, context: Context) {
-        if map != uiView.map {
-            uiView.map = map
-        }
         if graphicsOverlays != uiView.graphicsOverlays as? [AGSGraphicsOverlay] {
             uiView.graphicsOverlays.setArray(graphicsOverlays)
         }

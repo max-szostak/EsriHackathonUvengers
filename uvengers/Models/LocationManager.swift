@@ -7,45 +7,31 @@
 
 import CoreLocation
 
-//class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-//    let manager = CLLocationManager()
-//
-//    @Published var location: CLLocationCoordinate2D?
-//
-//    override init() {
-//        super.init()
-//        manager.delegate = self
-//    }
-//
-//    func requestLocation() {
-//        if status == .authorizedWhenInUse {
-//            locationManager.requestLocation()
-//        }
-//    }
-//
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        location = locations.first?.coordinate
-//    }
-//}
+final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    private let locationManager = CLLocationManager()
+    
+    @Published var location: CLLocationCoordinate2D?
 
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    private let manager = CLLocationManager()
-    var lastKnownLocation: CLLocation?
+    override init() {
+        super.init()
+        locationManager.delegate = self
+    }
 
-    func startUpdating() {
-        manager.delegate = self
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
+    func requestLocation() {
+        locationManager.requestLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations)
-        lastKnownLocation = locations.last
-    }
-
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            manager.startUpdatingLocation()
+        guard let location = locations.first else { return }
+        
+        DispatchQueue.main.async {
+            self.location = location.coordinate
         }
     }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        //Handle any errors here...
+        print (error)
+    }
 }
+

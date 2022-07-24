@@ -32,7 +32,6 @@ struct ApplyView: View {
                 
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
-                    
                 }){
                     Text("Confirm")
                 }

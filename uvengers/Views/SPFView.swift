@@ -14,15 +14,18 @@ struct SPFView: View {
     @Binding var spf: Int
     @Binding var waterproof: Bool
     
+    let backGreen = Color(0x8EB3A2)
+
+    
     var body: some View {
         ZStack {
-            Color.green
+            backGreen
             
             VStack{
                 
                 Spacer()
                 
-                Text("image here")
+                Image("sunscreen")
                 
                 Spacer()
                 

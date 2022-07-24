@@ -21,13 +21,19 @@ class UserModel: ObservableObject {
     @Published var timerrunning = true
     @Published var timeleft = 10
     @Published var timesince = 0
-    @Published var activity = ActivityType.swimming
-    
-    var timeBetweenReapp = 0
-    var status = "You are well protected"
-    
+    @Published var activity = ActivityType.swimming {
+        didSet {
+            updateRecommendedTime()
+        }
+    }
+    @Published var status = "You are well protected!"
+        
     @Published var spf = 50
-    @Published var waterproof = false
+    @Published var waterproof = false {
+        didSet {
+            updateRecommendedTime()
+        }
+    }
     
     var locationManager = LocationManager()
     
@@ -36,6 +42,7 @@ class UserModel: ObservableObject {
             timeleft -= 1
             timesince += 1
         } else {
+            updateStatus()
             timerrunning = false
         }
     }
@@ -44,25 +51,27 @@ class UserModel: ObservableObject {
         timeleft = timebetween
         timesince = 0
         timerrunning = true
+        updateStatus()
     }
     
     func updateRecommendedTime() {
-//        if let location = locationManager.lastKnownLocation {
-//            let lat = location.coordinate.latitude
-//            let long = location.coordinate.longitude
-//
-//            print(lat)
-//            print(long)
-//        } else {
-//            print("error")
-//        }
-        
-        
+        if (waterproof || activity == ActivityType.relaxing) {
+            timebetween = 120 // 2 hrs
+        } else if (activity == ActivityType.swimming) {
+            timebetween = 40 // 40 mins
+        } else {
+            timebetween = 6 * 60 // 6 hrs
+        }
+        timeleft = timebetween
+        timesince = 0
     }
     
-//    func setSunscreen(spf: Int, waterproof: Bool) {
-//        self.spf = spf
-//        self.waterproof = waterproof
-//        // todo: update recommendations
-//    }
+    func updateStatus() {
+        if (timeleft <= 0) {
+            status = "You are exposed to UV!"
+        } else {
+            status = "You are well protected!"
+        }
+    }
+
 }

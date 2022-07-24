@@ -18,14 +18,15 @@ struct UserStatusView: View {
             Color.white
             
             VStack {
-                Text("You are well protected").padding(20)
+                Text(self.user.status).padding(20)
                 
                 Spacer()
                 
-                // Image placeholder
-                Text(user.activity.rawValue.capitalized)
-                Text(String(user.waterproof))
-                Text(String(user.spf))
+                if user.status == "You are exposed to UV!" {
+                    Image("home under uv")
+                } else {
+                    Image("home well protected")
+                }
                 
                 Spacer()
                 
