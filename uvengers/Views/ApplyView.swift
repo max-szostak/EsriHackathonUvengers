@@ -13,16 +13,23 @@ struct ApplyView: View {
     
     @Binding var selectedActivity:UserModel.ActivityType
     
+    let offwhite = Color(0xF4F7F0)
+    
     var body: some View {
         ZStack {
-            Color.white
+            offwhite
             
             VStack {
                 Spacer()
                 
+                Image("activity")
+                
+                Spacer().frame(height: 50)
+                
                 Picker("Activity", selection:$selectedActivity) {
                     ForEach(UserModel.ActivityType.allCases) {activity in
                         Text(activity.rawValue.capitalized)
+                            .accessibilityLabel(activity.rawValue)
                     }
                 }
                 .pickerStyle(.segmented)
@@ -33,8 +40,8 @@ struct ApplyView: View {
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                 }){
-                    Text("Confirm")
-                }
+                    Image("apply button")
+                }.accessibilityLabel("apply")
                 
                 Spacer()
             }

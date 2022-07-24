@@ -11,7 +11,6 @@ import CoreLocationUI
 
 struct HomeView: View {
     
-    @StateObject var locationManager = LocationManager()
     
     @ObservedObject var user = UserModel()
     
@@ -48,17 +47,7 @@ struct HomeView: View {
                 backGreen
                 
                 VStack {
-                    LocationButton {
-                                    locationManager.requestLocation()
-                                }
-                                .frame(height: 44)
-                                .padding()
                     
-                    // User location
-                    Text("Redlands, CA")
-                    if let location = locationManager.location {
-                                    Text("Your location: \(location.latitude), \(location.longitude)")
-                                }
                 
                     // Center scroller
                     TabView {
@@ -85,6 +74,7 @@ struct HomeView: View {
                     }.sheet(isPresented: $isShowingApplyView) {
                         ApplyView(selectedActivity: $user.activity)
                     }
+                    .accessibilityLabel("apply")
                     
                     Spacer()
                 }
@@ -102,9 +92,10 @@ struct HomeView: View {
             
             ProfileView()
                 .tabItem {
-                    Label("Settings", image: "Profile").scaledToFit()
+                    Label("Settings", systemImage: "gear").scaledToFit()
                 }
                 .tag(4)
+                .scaledToFit()
         }
     }
 }

@@ -15,7 +15,7 @@ struct SPFView: View {
     @Binding var waterproof: Bool
     
     let backGreen = Color(0x8EB3A2)
-
+    let buttonGreen = Color(0x546E75)
     
     var body: some View {
         ZStack {
@@ -39,6 +39,7 @@ struct SPFView: View {
                         .keyboardType(.numberPad)
                         .padding(20)
                         .textFieldStyle(.roundedBorder)
+                        .accessibilityLabel("spf input")
                     
                     Spacer()
                 }.frame(width: 150)
@@ -47,6 +48,8 @@ struct SPFView: View {
                 
                 Toggle("Waterproof", isOn: $waterproof)
                     .frame(width: 150)
+                    .tint(buttonGreen)
+                    .accessibilityLabel("waterproof input")
                 
                 Spacer()
             }

@@ -19,7 +19,7 @@ class UserModel: ObservableObject {
     private var timebetween = 10
 
     @Published var timerrunning = true
-    @Published var timeleft = 10
+    @Published var timeleft = 5
     @Published var timesince = 0
     @Published var activity = ActivityType.swimming {
         didSet {
@@ -55,12 +55,14 @@ class UserModel: ObservableObject {
     }
     
     func updateRecommendedTime() {
-        if (waterproof || activity == ActivityType.relaxing) {
+        if (activity == ActivityType.indoors) {
+            timebetween = 6*60
+        } else if (waterproof || activity == ActivityType.relaxing) {
             timebetween = 120 // 2 hrs
         } else if (activity == ActivityType.swimming) {
             timebetween = 40 // 40 mins
         } else {
-            timebetween = 6 * 60 // 6 hrs
+            timebetween = 120 // 6 hrs
         }
         timeleft = timebetween
         timesince = 0

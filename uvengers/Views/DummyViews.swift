@@ -17,7 +17,7 @@ struct ShopView: View {
 struct ProfileView: View {
     var body: some View {
         VStack {
-            Image("settings")
+            Image("settings").scaledToFit()
         }
     }
 }

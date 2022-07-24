@@ -10,6 +10,8 @@
 		89162792288D04880023B73D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89162791288D04880023B73D /* MenuView.swift */; };
 		89162794288D08BF0023B73D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89162793288D08BF0023B73D /* MainView.swift */; };
 		89162796288D1A070023B73D /* DummyViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89162795288D1A070023B73D /* DummyViews.swift */; };
+		89162798288DA2E20023B73D /* APIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89162797288DA2E20023B73D /* APIView.swift */; };
+		8916279A288DA5970023B73D /* APIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89162799288DA5970023B73D /* APIView2.swift */; };
 		898900D6288C46E00060A237 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898900D5288C46E00060A237 /* UserModel.swift */; };
 		898900DA288C70730060A237 /* ApplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898900D9288C70730060A237 /* ApplyView.swift */; };
 		898900DD288C9E330060A237 /* ArcGIS in Frameworks */ = {isa = PBXBuildFile; productRef = 898900DC288C9E330060A237 /* ArcGIS */; };
@@ -28,6 +30,8 @@
 		89162791288D04880023B73D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		89162793288D08BF0023B73D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		89162795288D1A070023B73D /* DummyViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViews.swift; sourceTree = "<group>"; };
+		89162797288DA2E20023B73D /* APIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIView.swift; sourceTree = "<group>"; };
+		89162799288DA5970023B73D /* APIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIView2.swift; sourceTree = "<group>"; };
 		898900D5288C46E00060A237 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		898900D9288C70730060A237 /* ApplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyView.swift; sourceTree = "<group>"; };
 		898900DE288C9EAC0060A237 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				898900E0288CB2030060A237 /* SPFView.swift */,
 				89162791288D04880023B73D /* MenuView.swift */,
 				89162795288D1A070023B73D /* DummyViews.swift */,
+				89162797288DA2E20023B73D /* APIView.swift */,
+				89162799288DA5970023B73D /* APIView2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,12 +200,14 @@
 				898900DF288C9EAC0060A237 /* MapView.swift in Sources */,
 				89F1B514288B7DD900AC4587 /* HomeView.swift in Sources */,
 				898900DA288C70730060A237 /* ApplyView.swift in Sources */,
+				89162798288DA2E20023B73D /* APIView.swift in Sources */,
 				89F1B522288B7F5400AC4587 /* UserStatusView.swift in Sources */,
 				898900E1288CB2030060A237 /* SPFView.swift in Sources */,
 				89162792288D04880023B73D /* MenuView.swift in Sources */,
 				89162796288D1A070023B73D /* DummyViews.swift in Sources */,
 				89F1B512288B7DD900AC4587 /* uvengersApp.swift in Sources */,
 				89162794288D08BF0023B73D /* MainView.swift in Sources */,
+				8916279A288DA5970023B73D /* APIView2.swift in Sources */,
 				898900D6288C46E00060A237 /* UserModel.swift in Sources */,
 				89F1B520288B7F3B00AC4587 /* UVInfoView.swift in Sources */,
 				898900E3288CBB6B0060A237 /* LocationManager.swift in Sources */,
