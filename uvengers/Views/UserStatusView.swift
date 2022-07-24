@@ -9,18 +9,23 @@ import SwiftUI
 
 struct UserStatusView: View {
     
-    @StateObject var user = UserViewModel()
+    //@ObservedObject var user = UserModel()
     
+    @ObservedObject var user:UserModel
+        
     var body: some View {
         ZStack {
             Color.white
             
             VStack {
-                Text(user.status).padding(20)
+                Text("You are well protected").padding(20)
                 
                 Spacer()
                 
-                Text("image here")
+                // Image placeholder
+                Text(user.activity.rawValue.capitalized)
+                Text(String(user.waterproof))
+                Text(String(user.spf))
                 
                 Spacer()
                 
@@ -29,7 +34,7 @@ struct UserStatusView: View {
                     
                     VStack {
                         Text("Last application")
-                        Text(String(0))
+                        Text(String(user.timesince))
                     }
                     
                     Spacer()
@@ -37,18 +42,16 @@ struct UserStatusView: View {
                     VStack {
                         Text("Time left")
                         Text(String(user.timeleft))
-                            .onReceive(user.timer, perform: {_ in
-                                if user.timeleft > 0 && user.timerrunning {
-                                    user.timeleft -= 1
-                                } else {
-                                    user.timerrunning = true
-                                }
-                            })
+                            .onReceive(user.timer) {_ in user.timerReceived()}
                     }
                     
                     Spacer()
                 }.padding(20)
             }
-        }
+        }.cornerRadius(20)
+    }
+    
+    func applyButton () {
+        user.apply()
     }
 }

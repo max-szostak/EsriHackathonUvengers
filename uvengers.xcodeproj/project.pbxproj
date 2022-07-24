@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		898900D6288C46E00060A237 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898900D5288C46E00060A237 /* UserViewModel.swift */; };
+		898900D6288C46E00060A237 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898900D5288C46E00060A237 /* UserModel.swift */; };
+		898900DA288C70730060A237 /* ApplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898900D9288C70730060A237 /* ApplyView.swift */; };
+		898900DD288C9E330060A237 /* ArcGIS in Frameworks */ = {isa = PBXBuildFile; productRef = 898900DC288C9E330060A237 /* ArcGIS */; };
+		898900DF288C9EAC0060A237 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898900DE288C9EAC0060A237 /* MapView.swift */; };
+		898900E1288CB2030060A237 /* SPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898900E0288CB2030060A237 /* SPFView.swift */; };
+		898900E3288CBB6B0060A237 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898900E2288CBB6B0060A237 /* LocationManager.swift */; };
 		89F1B512288B7DD900AC4587 /* uvengersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F1B511288B7DD900AC4587 /* uvengersApp.swift */; };
 		89F1B514288B7DD900AC4587 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F1B513288B7DD900AC4587 /* HomeView.swift */; };
 		89F1B516288B7DDC00AC4587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89F1B515288B7DDC00AC4587 /* Assets.xcassets */; };
@@ -17,7 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		898900D5288C46E00060A237 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		898900D5288C46E00060A237 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		898900D9288C70730060A237 /* ApplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyView.swift; sourceTree = "<group>"; };
+		898900DE288C9EAC0060A237 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		898900E0288CB2030060A237 /* SPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPFView.swift; sourceTree = "<group>"; };
+		898900E2288CBB6B0060A237 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		89F1B50E288B7DD900AC4587 /* uvengers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uvengers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89F1B511288B7DD900AC4587 /* uvengersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uvengersApp.swift; sourceTree = "<group>"; };
 		89F1B513288B7DD900AC4587 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -32,12 +41,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				898900DD288C9E330060A237 /* ArcGIS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		898900D7288C6A6D0060A237 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89F1B513288B7DD900AC4587 /* HomeView.swift */,
+				89F1B51F288B7F3B00AC4587 /* UVInfoView.swift */,
+				89F1B521288B7F5400AC4587 /* UserStatusView.swift */,
+				898900D9288C70730060A237 /* ApplyView.swift */,
+				898900DE288C9EAC0060A237 /* MapView.swift */,
+				898900E0288CB2030060A237 /* SPFView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		898900D8288C6A780060A237 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				898900D5288C46E00060A237 /* UserModel.swift */,
+				898900E2288CBB6B0060A237 /* LocationManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		89F1B505288B7DD900AC4587 = {
 			isa = PBXGroup;
 			children = (
@@ -57,11 +89,9 @@
 		89F1B510288B7DD900AC4587 /* uvengers */ = {
 			isa = PBXGroup;
 			children = (
+				898900D8288C6A780060A237 /* Models */,
+				898900D7288C6A6D0060A237 /* Views */,
 				89F1B511288B7DD900AC4587 /* uvengersApp.swift */,
-				89F1B513288B7DD900AC4587 /* HomeView.swift */,
-				89F1B51F288B7F3B00AC4587 /* UVInfoView.swift */,
-				89F1B521288B7F5400AC4587 /* UserStatusView.swift */,
-				898900D5288C46E00060A237 /* UserViewModel.swift */,
 				89F1B515288B7DDC00AC4587 /* Assets.xcassets */,
 				89F1B517288B7DDC00AC4587 /* Preview Content */,
 			);
@@ -92,6 +122,9 @@
 			dependencies = (
 			);
 			name = uvengers;
+			packageProductDependencies = (
+				898900DC288C9E330060A237 /* ArcGIS */,
+			);
 			productName = uvengers;
 			productReference = 89F1B50E288B7DD900AC4587 /* uvengers.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +153,9 @@
 				Base,
 			);
 			mainGroup = 89F1B505288B7DD900AC4587;
+			packageReferences = (
+				898900DB288C9E330060A237 /* XCRemoteSwiftPackageReference "arcgis-runtime-ios" */,
+			);
 			productRefGroup = 89F1B50F288B7DD900AC4587 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,11 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				898900DF288C9EAC0060A237 /* MapView.swift in Sources */,
 				89F1B514288B7DD900AC4587 /* HomeView.swift in Sources */,
+				898900DA288C70730060A237 /* ApplyView.swift in Sources */,
 				89F1B522288B7F5400AC4587 /* UserStatusView.swift in Sources */,
+				898900E1288CB2030060A237 /* SPFView.swift in Sources */,
 				89F1B512288B7DD900AC4587 /* uvengersApp.swift in Sources */,
-				898900D6288C46E00060A237 /* UserViewModel.swift in Sources */,
+				898900D6288C46E00060A237 /* UserModel.swift in Sources */,
 				89F1B520288B7F3B00AC4587 /* UVInfoView.swift in Sources */,
+				898900E3288CBB6B0060A237 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +389,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		898900DB288C9E330060A237 /* XCRemoteSwiftPackageReference "arcgis-runtime-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/esri/arcgis-runtime-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		898900DC288C9E330060A237 /* ArcGIS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 898900DB288C9E330060A237 /* XCRemoteSwiftPackageReference "arcgis-runtime-ios" */;
+			productName = ArcGIS;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89F1B506288B7DD900AC4587 /* Project object */;
 }
