@@ -23,7 +23,7 @@ struct SwiftUIMapView {
 
     init() {
         
-        AGSArcGISRuntimeEnvironment.apiKey = "AAPKf9176fccbd2c4386861b695ddbf7695eR2NImxXIiHfTuQgnDrvnJLPnkbNmDlTfT9nECyklYAtqCZDmeTpv9znRLIW8kqvH"
+        AGSArcGISRuntimeEnvironment.apiKey = ProcessInfo.processInfo.environment["ARCGIS_KEY"] ?? ""
         
         self.map = AGSMap(item: portalItem)
         self.graphicsOverlays = []

@@ -1,4 +1,3 @@
-#API Key is 96b6e62e756d9c1c881aa0c68af34af9
 #Dummy lat is 34.0603
 #Dummy lon is -117.197487
 #Exclude minutely,daily,hourly,alerts

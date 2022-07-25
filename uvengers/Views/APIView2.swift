@@ -3,7 +3,7 @@ import Foundation
 
 
 func callAPI() async -> String{
-    let URL_API_KEY = "dcffc778de2a4c6033399aa09c949bfe"
+    let URL_API_KEY = ProcessInfo.processInfo.environment["OPEN_WEATHER_API_KEY"] ?? ""
     var URL_LATITUDE = "47.740"
     var URL_LONGITUDE = "-122.374"
     var URL_GET_ONE_CALL = ""
